@@ -30,14 +30,14 @@ public:
     /**
      * @brief Переопределение оператора =. Присвоение в ячейку значения по умолчанию освобождает ячейку.
      */
-    void operator=(T newValue) {
+    Proxy& operator=(T newValue) {
         if (newValue == matrix_.getDefaultValue()) {
             matrix_.deleteElement(cell_coords_);
-
-            return;
+        } else {
+            matrix_.insertElement(cell_coords_, newValue);
         }
 
-        matrix_.insertElement(cell_coords_, newValue);
+        return *this;  // Для поддержки канонической формы оператора =, допускающую выражения ((matrix[100][100] = 314) = 0) = 217
     }
 
     /**
