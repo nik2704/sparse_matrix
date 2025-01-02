@@ -34,6 +34,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/vector_editor-0.0.${{ github.run_number }}-Linux.deb
-          asset_name: vector_editor-0.0.${{ github.run_number }}-Linux.deb
+          asset_path: ./build/sparse_matrix-0.0.${{ github.run_number }}-Linux.deb
+          asset_name: sparse_matrix-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
